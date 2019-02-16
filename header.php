@@ -18,18 +18,19 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
     <!--Bootstrap    -->
-    <link rel="stylesheet" href="<?php get_stylesheet_uri()?>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/bootstrap.min.css">
     <!--font-awesome-->
-    <link rel="stylesheet" href="<?php get_stylesheet_uri()?>/assets/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/font-awesome/css/font-awesome.min.css">
     <!--Google-font-->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
 	<?php wp_head(); ?>
 
-    <!-- for IE 9>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <!-->
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
@@ -51,29 +52,19 @@
                             <span class="icon-bar"></span>
                         </button>
 
-                        <a class="navbar-brand" href="/"><img src="assets/img/logo.png" alt="Bootstrap to Wordpress"></a>
+                        <a class="navbar-brand" href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="Bootstrap to Wordpress"></a>
                     </div>
 
-                    //create navbar in Dashboard
+<!--                    create navbar in Dashboard-->
                     <?php
                         wp_nav_menu( array(
-                                //which menu WordPress looking for
                                 'theme_location' => 'primary',
                                 'container' => 'nav',
                                 'container_class' => 'navbar-collapse collapse',
-                                'menu-_class' => 'nav navbar-nav navbar-right'
+                                'menu_class' => 'nav navbar-nav navbar-right'
                             )
-                        );
+                        )
                     ?>
-
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="resources.html">Resources</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
 
                 </div>
             </div>
