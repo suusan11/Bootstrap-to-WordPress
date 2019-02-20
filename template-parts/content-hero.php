@@ -34,7 +34,7 @@
         <h4>Final Price <small>Coming soon!</small></h4>
         <span><?php the_field('final_price')?></span>
     </div>
-    </divćc
+    </div>
     <p><a class="btn btn-lg btn-danger" href="<?php the_field('course_url')?>" role="button"><?php the_field('button_text')?></a></p>
 </div>
 
