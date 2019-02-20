@@ -31,21 +31,21 @@
 <footer>
     <div class="container">
         <div class="col-sm-3">
-            <p><a href="/"><img src="assets/img/logo.png" alt="Bootstarap to Wordpress"></a></p>
+            <p><a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="Bootstarap to Wordpress"></a></p>
         </div>
         <div class="col-sm-6">
-            <nav>
-                <ul class="list-unstyled list-inline">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Blog</a></li>
-                    <li><a href="">Resources</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li class="signup-link"><a href="">Sign up now</a></li>
-                </ul>
-            </nav>
+            <!--create navbar in Dashboard-->
+            <?php
+            wp_nav_menu( array(
+                    'theme_location' => 'Footer',
+                    'container' => 'nav',
+                    'menu_class' => 'list-unstyled list-inline'
+                )
+            )
+            ?>
         </div>
         <div class="col-sm-3">
-            <p class="pull-right">&copy; 2019</p>
+            <p class="pull-right"><?php echo bloginfo('name'); ?>&copy; <?php echo date('Y'); ?><?php the_author_link(); ?></p>
         </div>
     </div>
 </footer>
