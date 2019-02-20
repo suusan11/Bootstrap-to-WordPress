@@ -61,7 +61,7 @@ get_header();
 
             <!--side bar-->
             <aside class="col-sm-4">
-                get_sidebar();
+                <?php get_sidebar(); ?>
             </aside>
         </div>
     </div>
