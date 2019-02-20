@@ -1,17 +1,27 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: miiiiiiiiiiie
- * Date: 2019-02-19
- * Time: 15:17
- * Template Name: Resources page
+    Template Name: Resources Page
  */
+
+get_header();
+
+$thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( $post -> ID ) );
 ?>
 
 <!--feature img-->
-<section class="feature-image feature-image-default" data-type="background" data-speed="2">
-    <h1 class="page-title">Resources</h1>
-</section>
+<?php if( has_post_thumbnail() ) { ?>
+
+    <section class="feature-image" style="background: url('<?php echo $thumbnail_url; ?>') no-repeat; background-size: cover;" data-type="background" data-speed="2">
+        <h1 class="page-title"><?php the_title(); ?></h1>
+    </section>
+
+<?php } else { ?>
+
+    <section class="feature-image feature-image-default" data-type="background" data-speed="2">
+        <h1 class="page-title"><?php the_title(); ?></h1>
+    </section>
+
+<?php } ?>
 
 <!--main content-->
 <div class="container">
@@ -52,3 +62,5 @@
         </div>
     </div>
 </div>
+
+<?php get_footer(); ?>
