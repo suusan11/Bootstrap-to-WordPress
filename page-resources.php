@@ -39,7 +39,7 @@ $thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( $post -> ID ) );
 
                     <?php while ( $loop -> have_posts() ) : $loop -> the_post(); ?>
 
-                    //have to define inside of loop
+                    <!--have to define inside of loop-->
                     <?php
                         $resource_image = get_field('resource_image');
                         $resource_url = get_field('resource_url');
